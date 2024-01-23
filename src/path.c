@@ -21,6 +21,16 @@
 #include <stdio.h>
 #include <ctype.h>
 
+DIR * opendir$INODE64(char * dirName)
+{
+	return opendir(dirName);
+}
+
+struct dirent * readdir$INODE64(DIR *dir)
+{
+	return readdir(dir);
+}
+
 static int dos_drive_prefix_length(const char *path)
 {
 	int i;
